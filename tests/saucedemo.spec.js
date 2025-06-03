@@ -6,7 +6,7 @@ test('Login, adicionar 3 itens e visualizar carrinho', async({ page }) => {
 
     // 2. Fazer login
     await page.fill('#user-name', 'standard_user');
-    await page.fill('#password', 'teste'); // Aplicando senha incorreta
+    await page.fill('#password', 'secret_sauce'); // Aplicando senha incorreta.
     await page.screenshot({ path: 'prints/login.png' });
     await page.click('#login-button');
 
@@ -15,7 +15,7 @@ test('Login, adicionar 3 itens e visualizar carrinho', async({ page }) => {
 
     // 4. Adiciona 3 produtos acessando a página de detalhes
     for (let i = 0; i < 3; i++) {
-        const itemName = page.locator('.inventory_item_name').nth(i);
+        const itemName = page.locator('.inventory_item_name2').nth(i); // Alterando nome do item
         await itemName.click();
         await page.click('button.btn_inventory');
         await page.screenshot({ path: `prints/item-${i + 1}.png` });
