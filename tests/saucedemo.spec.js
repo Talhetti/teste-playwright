@@ -6,7 +6,7 @@ test('Login, adicionar 3 itens e visualizar carrinho', async({ page }) => {
 
     // 2. Fazer login
     await page.fill('#user-name', 'standard_user');
-    await page.fill('#password', 'secret_sauce');
+    await page.fill('#password', 'teste');
     await page.screenshot({ path: 'prints/login.png' });
     await page.click('#login-button');
 
